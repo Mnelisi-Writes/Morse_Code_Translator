@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morse Code Translator Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-broadcast-tower"></i> Morse Code Translator</h1>
+            <div class="theme-switch">
+                <label class="switch">
+                    <input type="checkbox" id="themeToggle">
+                    <span class="slider round"></span>
+                </label>
+                <span id="themeLabel">Dark Mode</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="translator-card">
+                <div class="controls">
+                    <div class="direction-selector">
+                        <div class="radio-group">
+                            <input type="radio" id="toMorse" name="direction" value="toMorse" checked>
+                            <label for="toMorse"><i class="fas fa-language"></i> Text to Morse</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="fromMorse" name="direction" value="fromMorse">
+                            <label for="fromMorse"><i class="fas fa-code"></i> Morse to Text</label>
+                        </div>
+                    </div>
+
+                    <div class="speed-control">
+                        <label for="speedSlider"><i class="fas fa-tachometer-alt"></i> Speed:</label>
+                        <input type="range" id="speedSlider" min="5" max="20" value="10">
+                        <span id="speedValue">10 WPM</span>
+                    </div>
+                </div>
+
+                <div class="input-area">
+                    <div class="textarea-header">
+                        <label for="inputText">Input Text</label>
+                        <div class="char-count" id="inputCount">0 characters</div>
+                    </div>
+                    <textarea id="inputText" placeholder="Type or paste your content here..."></textarea>
+                </div>
+
+                <div class="button-group">
+                    <button id="translateBtn" class="btn-primary">
+                        <i class="fas fa-exchange-alt"></i> Translate
+                    </button>
+                    <button id="clearBtn" class="btn-secondary">
+                        <i class="fas fa-eraser"></i> Clear
+                    </button>
+                    <button id="playBtn" class="btn-primary" disabled>
+                        <i class="fas fa-play"></i> Play Morse
+                    </button>
+                    <button id="copyBtn" class="btn-secondary">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                    <button id="sampleBtn" class="btn-tertiary">
+                        <i class="fas fa-lightbulb"></i> Load Sample
+                    </button>
+                </div>
+
+                <div class="output-area">
+                    <div class="textarea-header">
+                        <label for="outputText">Translation Result</label>
+                        <div class="char-count" id="outputCount">0 characters</div>
+                    </div>
+                    <textarea id="outputText" readonly></textarea>
+                </div>
+            </div>
+
+            <div class="history-card" id="historySection">
+                <h3><i class="fas fa-history"></i> Translation History</h3>
+                <div class="history-list" id="historyList"></div>
+                <button id="clearHistoryBtn" class="btn-tertiary small">
+                    <i class="fas fa-trash-alt"></i> Clear History
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <div class="help-section">
+                <button id="helpBtn" class="btn-tertiary">
+                    <i class="fas fa-question-circle"></i> Help & Instructions
+                </button>
+                <div class="morse-reference" id="morseReference">
+                    <h4>Morse Code Reference</h4>
+                    <div class="reference-grid" id="referenceGrid"></div>
+                </div>
+            </div>
+            <p class="credits">Morse Code Translator Pro © 2023 | Created with <i class="fas fa-heart"></i></p>
+        </footer>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2><i class="fas fa-question-circle"></i> Help & Instructions</h2>
+            <div class="modal-body">
+                <h3>How to use this translator:</h3>
+                <ol>
+                    <li>Select translation direction (Text to Morse or Morse to Text)</li>
+                    <li>Type or paste your text in the input area</li>
+                    <li>Click "Translate" to convert your text</li>
+                    <li>For Morse to Text, separate letters with spaces and words with "/"</li>
+                    <li>Use the playback controls to hear your Morse code</li>
+                </ol>
+
+                <h3>Features:</h3>
+                <ul>
+                    <li><strong>Dark/Light Mode:</strong> Toggle between color themes</li>
+                    <li><strong>Speed Control:</strong> Adjust Morse code playback speed</li>
+                    <li><strong>Translation History:</strong> View your past translations</li>
+                    <li><strong>Copy Function:</strong> Copy results to clipboard</li>
+                    <li><strong>Sample Texts:</strong> Load example texts to try</li>
+                    <li><strong>Reference Chart:</strong> Built-in Morse code cheat sheet</li>
+                </ul>
+
+                <h3>Tips:</h3>
+                <ul>
+                    <li>Playback works best with headphones</li>
+                    <li>For long texts, consider breaking into smaller chunks</li>
+                    <li>Letters are case-insensitive in text-to-Morse translation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
