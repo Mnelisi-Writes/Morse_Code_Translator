@@ -2,7 +2,8 @@
 
 # Morse Code Translator Pro
 
-![Morse Code Translator Screenshot](./screenshot.png)
+![Demo shot](https://github.com/user-attachments/assets/6677b797-e521-4454-bccb-02c33cc47b28)
+
 
 A feature-rich web application for translating between text and Morse code with audio playback, translation history, and customizable settings.
 
