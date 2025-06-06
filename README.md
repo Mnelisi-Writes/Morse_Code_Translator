@@ -103,9 +103,9 @@ morse-translator/
 ├── index.html          # Main application HTML
 ├── styles.css          # All styling and theming
 ├── script.js           # Core application logic
-├── screenshot.png      # Application screenshot
-├── README.md           # This documentation
-└── LICENSE             # MIT License file
+├── Demo shot.png      # Application screenshot
+├── README.md           # Descriptive document for the project
+
 ```
 
 ## Contributing
